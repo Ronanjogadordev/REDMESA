@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Red Mesa | Black Friday Camping e Trilha | Belo Horizonte</title>
+<meta name="description" content="Barracas e sacos de dormir com preço de Black Friday em Belo Horizonte. Peça direto pelo WhatsApp">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#24282d;
+  --papel:#f3f2ef;
+  --branco:#ffffff;
+  --destaque:#e8643a;
+  --alerta:#b8262b;
+  --cinza:#5d636b;
+  --linha:#dcd9d3;
+  --verde:#1d7a46;
+  --raio:10px;
+  --foto-hero:url('images/hero.jpg');
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--tinta);background:var(--papel);line-height:1.55;font-size:17px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{width:min(1080px,92%);margin-inline:auto}
+:focus-visible{outline:3px solid var(--destaque);outline-offset:3px}
+
+.topo{background:var(--tinta);color:var(--branco);position:sticky;top:0;z-index:20}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+.marca{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:1.2rem;text-decoration:none}
+.marca img{width:44px;height:44px;border-radius:50%;display:block}
+.topo a.btn-mini{background:var(--destaque);color:var(--tinta);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:999px;font-size:.92rem;white-space:nowrap}
+
+.hero{background:var(--tinta);color:var(--branco);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:var(--foto-hero);background-size:cover;background-position:center;opacity:.35}
+.hero .wrap{position:relative;display:grid;gap:26px;padding:52px 0 60px}
+.hero h1{font-size:clamp(2.3rem,7vw,4.4rem);font-weight:800;max-width:15ch}
+.hero p.sub{font-size:1.12rem;max-width:48ch;color:#dedbd5}
+.selo{display:inline-block;background:var(--alerta);color:var(--branco);font-weight:600;padding:6px 14px;border-radius:6px;font-size:.95rem;width:fit-content}
+.cta{display:inline-flex;align-items:center;justify-content:center;background:var(--destaque);color:var(--tinta);font-weight:700;text-decoration:none;padding:16px 28px;border-radius:var(--raio);font-size:1.05rem;width:fit-content}
+.cta:hover{filter:brightness(.95)}
+.relogio{display:flex;gap:10px;flex-wrap:wrap}
+.relogio div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:var(--raio);padding:10px 14px;min-width:74px;text-align:center}
+.relogio strong{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1.9rem;line-height:1}
+.relogio span{font-size:.8rem;color:#cfccc6}
+
+section{padding:60px 0}
+section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:10px}
+.lead{color:var(--cinza);max-width:60ch;margin-bottom:24px}
+
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filtros button{font:inherit;font-weight:600;font-size:.92rem;padding:8px 16px;border-radius:999px;border:1px solid var(--linha);background:var(--branco);color:var(--tinta);cursor:pointer}
+.filtros button[aria-pressed="true"]{background:var(--tinta);color:var(--branco);border-color:var(--tinta)}
+
+.grade{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column}
+.foto{aspect-ratio:4/3;background-color:#cfcac1;background-size:cover;background-position:center;position:relative}
+.foto em{position:absolute;left:10px;top:10px;background:var(--alerta);color:var(--branco);font-style:normal;font-weight:700;font-size:.85rem;padding:4px 10px;border-radius:6px}
+.foto b{position:absolute;right:10px;top:10px;background:var(--tinta);color:var(--branco);font-weight:600;font-size:.8rem;padding:4px 10px;border-radius:6px}
+.card .corpo{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:1.15rem}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:.88rem}
+.card dt{color:var(--cinza)}
+.card dd{font-weight:600}
+.preco{display:flex;align-items:baseline;gap:10px;margin-top:auto;flex-wrap:wrap}
+.preco del{color:var(--cinza);font-size:.95rem}
+.preco strong{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1.7rem}
+.card a.pedir{background:var(--verde);color:var(--branco);text-align:center;text-decoration:none;font-weight:600;padding:12px;border-radius:8px}
+.card a.pedir:hover{filter:brightness(.92)}
+.fonte{font-size:.78rem;color:var(--cinza)}
+
+.faixa{background:var(--branco);border-block:1px solid var(--linha)}
+.passos{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));list-style:none;counter-reset:p}
+.passos li{counter-increment:p;padding-left:52px;position:relative}
+.passos li::before{content:counter(p);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--tinta);color:var(--destaque);display:grid;place-items:center;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800}
+.passos strong{display:block}
+
+.guia{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.guia article{background:var(--branco);border-left:5px solid var(--destaque);padding:20px;border-radius:var(--raio)}
+.guia h3{font-size:1.1rem;margin-bottom:6px}
+
+.garantia{background:var(--tinta);color:var(--branco)}
+.garantia p{color:#dedbd5;max-width:62ch;margin-top:6px}
+
+.local{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}
+.local ul{list-style:none;display:grid;gap:8px}
+.local a{font-weight:600}
+.mapa{aspect-ratio:16/10;border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;background:#dfdcd5}
+.mapa iframe{width:100%;height:100%;border:0;display:block}
+
+footer{background:#17191c;color:#a8a49d;padding:28px 0;font-size:.9rem}
+footer .wrap{display:grid;gap:8px}
+
+.zap{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--verde);color:var(--branco);text-decoration:none;font-weight:700;padding:14px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+
+@media (min-width:760px){
+  .hero .wrap{padding:80px 0 88px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#topo"><img src="images/logo-pequena.png" alt="Logo Red Mesa" width="44" height="44"><span>Red Mesa</span></a>
+    <a class="btn-mini" href="#ofertas">Ver ofertas</a>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero">
+    <div class="wrap">
+      <span class="selo">Black Friday 27/11</span>
+      <h1>Equipamento de camping com preço de Black Friday</h1>
+      <p class="sub">Barracas e sacos de dormir para a sua próxima trilha. Escolha o produto e peça direto no WhatsApp</p>
+      <div class="relogio" aria-live="off">
+        <div><strong id="d">00</strong><span>dias</span></div>
+        <div><strong id="h">00</strong><span>horas</span></div>
+        <div><strong id="m">00</strong><span>min</span></div>
+        <div><strong id="s">00</strong><span>seg</span></div>
+      </div>
+      <a class="cta" href="#ofertas">Quero as ofertas</a>
+    </div>
+  </div>
+
+  <section id="ofertas">
+    <div class="wrap">
+      <h2>Ofertas da semana</h2>
+      <p class="lead">Preços de referência pesquisados em 09/11/2026 nas lojas indicadas em cada produto. Confirme o valor e o estoque no WhatsApp antes de fechar</p>
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+      <div class="grade" id="grade"></div>
+    </div>
+  </section>
+
+  <section class="faixa">
+    <div class="wrap">
+      <h2>Como pedir</h2>
+      <p class="lead">Sem cadastro e sem carrinho. O atendimento é feito por uma pessoa</p>
+      <ol class="passos">
+        <li><strong>Escolha a oferta</strong>Veja os dados e o preço de cada produto</li>
+        <li><strong>Toque em pedir</strong>A mensagem já abre pronta no WhatsApp</li>
+        <li><strong>Combine a entrega</strong>Retirada em Belo Horizonte ou envio combinado</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Guia rápido de compra</h2>
+      <p class="lead">Dois dados que ajudam a escolher o equipamento certo</p>
+      <div class="guia">
+        <article>
+          <h3>Barracas</h3>
+          <p>No Brasil as barracas têm de 300 mm a 6000 mm de coluna d'água e a partir de 1000 mm a proteção contra chuva é considerada boa. Capacidade anunciada costuma ser com folga, por isso muitos campistas usam uma barraca de 3 pessoas para 2 com mochilas</p>
+        </article>
+        <article>
+          <h3>Sacos de dormir</h3>
+          <p>Escolha um saco cuja temperatura de conforto fique pelo menos 5°C abaixo da menor temperatura esperada no destino. A temperatura extrema indica só o limite contra hipotermia, não o conforto</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="garantia">
+    <div class="wrap">
+      <h2>Compra com garantia</h2>
+      <p>Compras feitas por WhatsApp contam como compra à distância, com direito de arrependimento de 7 dias após o recebimento (Código de Defesa do Consumidor, art. 49). A garantia legal para produto durável é de 90 dias (art. 26)</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap local">
+      <div>
+        <h2>Onde estamos</h2>
+        <ul>
+          <li>Rua Oliveira Lisboa, 41, Barreiro, Belo Horizonte, MG, CEP 30640-470</li>
+          <li>Atendimento pelo WhatsApp (31) 98322-4229</li>
+          <li><a id="linkzap" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="mapa">
+        <iframe title="Mapa da Red Mesa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua+Oliveira+Lisboa+41+Barreiro+Belo+Horizonte+MG&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Red Mesa, Rua Oliveira Lisboa, 41, Barreiro, Belo Horizonte, MG</span>
+    <span>Página-modelo criada por Vitrine 72h em projeto acadêmico. Preços de referência de mercado, sujeitos a alteração</span>
+  </div>
+</footer>
+
+<a class="zap" id="zapfixo" href="#" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+const LOJA = {
+  nome: "Red Mesa",
+  whatsapp: "5531983224229",
+  fimOferta: "2026-11-27T23:59:59-03:00",
+  produtos: [
+    {
+      nome: "Barraca Nautika Panda 3 pessoas",
+      categoria: "Barracas",
+      de: 239.90,
+      por: 227.90,
+      foto: "images/produtos/barraca-panda-3.jpg",
+      dados: [["Capacidade","3 pessoas"],["Tipo","Iglu"],["Marca","Nautika"]],
+      fonte: "Preço no Mercado Livre em 09/11/2026"
+    },
+    {
+      nome: "Barraca Mor iglu 3 pessoas",
+      categoria: "Barracas",
+      de: 229.59,
+      por: 183.67,
+      foto: "images/produtos/barraca-mor-3.jpg",
+      dados: [["Capacidade","3 pessoas"],["Tipo","Iglu impermeável"],["Marca","Mor"]],
+      fonte: "Preço no Mercado Livre em 09/11/2026"
+    },
+    {
+      nome: "Barraca Nautika Falcon 3",
+      categoria: "Barracas",
+      de: null,
+      por: 299.90,
+      foto: "images/produtos/barraca-falcon-3.jpg",
+      dados: [["Capacidade","3 pessoas"],["Peso","2,1 kg"],["Extras","Tela mosquiteiro e proteção UV"]],
+      fonte: "Menor preço no Zoom em 09/11/2026"
+    },
+    {
+      nome: "Barraca Nautika Fox 5/6",
+      categoria: "Barracas",
+      de: null,
+      por: 324.90,
+      foto: "images/produtos/barraca-fox-5.jpg",
+      dados: [["Capacidade","5 pessoas"],["Peso","3,4 kg"],["Medidas","240 x 240 x 140 cm"]],
+      fonte: "Menor preço no Buscapé em 09/11/2026"
+    },
+    {
+      nome: "Saco de dormir Nautika Viper",
+      categoria: "Sacos de dormir",
+      de: 209.40,
+      por: 179.46,
+      foto: "images/produtos/saco-viper.jpg",
+      dados: [["Conforto","5°C a 12°C"],["Formato","Sarcófago"],["Marca","Nautika"]],
+      fonte: "Preço no Pix na Magazine Luiza em 09/11/2026"
+    },
+    {
+      nome: "Saco de dormir Nautika Antartik",
+      categoria: "Sacos de dormir",
+      de: null,
+      por: 292.90,
+      foto: "images/produtos/saco-antartik.jpg",
+      dados: [["Faixa","-7°C a 3°C"],["Comprimento","230 cm"],["Marca","Nautika"]],
+      fonte: "Preço no Extra em 09/11/2026"
+    }
+  ]
+};
+
+const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const zapLink = txt => "https://wa.me/" + LOJA.whatsapp + "?text=" + encodeURIComponent(txt);
+const grade = document.getElementById("grade");
+const filtros = document.getElementById("filtros");
+
+function criarCard(p){
+  const card = document.createElement("article");
+  card.className = "card";
+  const foto = document.createElement("div");
+  foto.className = "foto";
+  foto.style.backgroundImage = "url('" + p.foto + "'), linear-gradient(135deg,#cfcac1,#a99f92)";
+  if (p.de) {
+    const tag = document.createElement("em");
+    tag.textContent = "-" + Math.round((1 - p.por / p.de) * 100) + "%";
+    foto.appendChild(tag);
+  }
+  const cat = document.createElement("b");
+  cat.textContent = p.categoria;
+  foto.appendChild(cat);
+  const corpo = document.createElement("div");
+  corpo.className = "corpo";
+  const h = document.createElement("h3");
+  h.textContent = p.nome;
+  const dl = document.createElement("dl");
+  p.dados.forEach(([k, v]) => {
+    const dt = document.createElement("dt");
+    dt.textContent = k;
+    const dd = document.createElement("dd");
+    dd.textContent = v;
+    dl.append(dt, dd);
+  });
+  const preco = document.createElement("div");
+  preco.className = "preco";
+  if (p.de) {
+    const de = document.createElement("del");
+    de.textContent = brl(p.de);
+    preco.appendChild(de);
+  }
+  const por = document.createElement("strong");
+  por.textContent = brl(p.por);
+  preco.appendChild(por);
+  const fonte = document.createElement("span");
+  fonte.className = "fonte";
+  fonte.textContent = p.fonte;
+  const a = document.createElement("a");
+  a.className = "pedir";
+  a.href = zapLink("Oi, vi a página da Red Mesa e quero a oferta: " + p.nome + " por " + brl(p.por));
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.textContent = "Pedir no WhatsApp";
+  corpo.append(h, dl, preco, fonte, a);
+  card.append(foto, corpo);
+  return card;
+}
+
+function mostrar(categoria){
+  grade.replaceChildren();
+  LOJA.produtos
+    .filter(p => categoria === "Todos" || p.categoria === categoria)
+    .forEach(p => grade.appendChild(criarCard(p)));
+  filtros.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.textContent === categoria)));
+}
+
+["Todos", ...new Set(LOJA.produtos.map(p => p.categoria))].forEach(c => {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.textContent = c;
+  b.addEventListener("click", () => mostrar(c));
+  filtros.appendChild(b);
+});
+mostrar("Todos");
+
+["linkzap","zapfixo"].forEach(id => {
+  document.getElementById(id).href = zapLink("Oi, vi a página da Red Mesa e quero saber mais");
+});
+
+const fim = new Date(LOJA.fimOferta).getTime();
+const pad = n => String(n).padStart(2, "0");
+function tick(){
+  let t = Math.max(0, fim - Date.now());
+  const d = Math.floor(t / 86400000); t -= d * 86400000;
+  const h = Math.floor(t / 3600000); t -= h * 3600000;
+  const m = Math.floor(t / 60000); t -= m * 60000;
+  const s = Math.floor(t / 1000);
+  document.getElementById("d").textContent = pad(d);
+  document.getElementById("h").textContent = pad(h);
+  document.getElementById("m").textContent = pad(m);
+  document.getElementById("s").textContent = pad(s);
+}
+tick();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>
