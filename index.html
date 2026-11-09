@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Red Mesa | Black Friday Camping e Trilha | Belo Horizonte</title>
-<meta name="description" content="Barracas e sacos de dormir com preço de Black Friday em Belo Horizonte. Peça direto pelo WhatsApp">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<meta name="description" content="Barracas, sacos de dormir, mochilas e equipamentos de trilha com preço de Black Friday em Belo Horizonte. Peça direto pelo WhatsApp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23f3f2ef' stroke='%2324282d' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23e8643a' stroke-width='2'/%3E%3Cpath d='M 20 65 L 50 25 L 80 65 Z' fill='%23b8262b'/%3E%3Cpath d='M 38 65 L 50 38 L 62 65 Z' fill='%23e8643a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -19,8 +19,9 @@
   --cinza:#5d636b;
   --linha:#dcd9d3;
   --verde:#1d7a46;
+  --instagram:#e1306c;
   --raio:10px;
-  --foto-hero:url('images/hero.jpg');
+  --foto-hero:url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&auto=format&fit=crop');
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -33,8 +34,12 @@ a{color:inherit}
 .topo{background:var(--tinta);color:var(--branco);position:sticky;top:0;z-index:20}
 .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
 .marca{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:1.2rem;text-decoration:none}
-.marca img{width:44px;height:44px;border-radius:50%;display:block}
-.topo a.btn-mini{background:var(--destaque);color:var(--tinta);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:999px;font-size:.92rem;white-space:nowrap}
+.marca svg{width:44px;height:44px;border-radius:50%;display:block}
+.botoes-topo{display:flex;gap:8px;align-items:center}
+.topo a.btn-mini{background:var(--destaque);color:var(--tinta);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:999px;font-size:.92rem;white-space:nowrap;transition:0.2s}
+.topo a.btn-mini:hover{filter:brightness(.92)}
+.topo a.btn-insta{background:var(--instagram);color:var(--branco);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:999px;font-size:.92rem;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:0.2s}
+.topo a.btn-insta:hover{filter:brightness(.92)}
 
 .hero{background:var(--tinta);color:var(--branco);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background-image:var(--foto-hero);background-size:cover;background-position:center;opacity:.35}
@@ -58,10 +63,12 @@ section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:10px}
 .filtros button[aria-pressed="true"]{background:var(--tinta);color:var(--branco);border-color:var(--tinta)}
 
 .grade{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.card{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column}
-.foto{aspect-ratio:4/3;background-color:#cfcac1;background-size:cover;background-position:center;position:relative}
-.foto em{position:absolute;left:10px;top:10px;background:var(--alerta);color:var(--branco);font-style:normal;font-weight:700;font-size:.85rem;padding:4px 10px;border-radius:6px}
-.foto b{position:absolute;right:10px;top:10px;background:var(--tinta);color:var(--branco);font-weight:600;font-size:.8rem;padding:4px 10px;border-radius:6px}
+.card{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.foto{aspect-ratio:4/3;background-color:#1e2227;position:relative;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover;display:block}
+.foto em{position:absolute;left:10px;top:10px;background:var(--alerta);color:var(--branco);font-style:normal;font-weight:700;font-size:.85rem;padding:4px 10px;border-radius:6px;z-index:2}
+.foto b{position:absolute;right:10px;top:10px;background:var(--tinta);color:var(--branco);font-weight:600;font-size:.8rem;padding:4px 10px;border-radius:6px;z-index:2}
 .card .corpo{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
 .card h3{font-size:1.15rem}
 .card dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:.88rem}
@@ -70,6 +77,7 @@ section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:10px}
 .preco{display:flex;align-items:baseline;gap:10px;margin-top:auto;flex-wrap:wrap}
 .preco del{color:var(--cinza);font-size:.95rem}
 .preco strong{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1.7rem}
+.card .btn-ver{background:var(--tinta);color:var(--branco);text-align:center;font-weight:600;padding:10px;border-radius:8px;margin-top:4px}
 .card a.pedir{background:var(--verde);color:var(--branco);text-align:center;text-decoration:none;font-weight:600;padding:12px;border-radius:8px}
 .card a.pedir:hover{filter:brightness(.92)}
 .fonte{font-size:.78rem;color:var(--cinza)}
@@ -96,8 +104,28 @@ section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:10px}
 footer{background:#17191c;color:#a8a49d;padding:28px 0;font-size:.9rem}
 footer .wrap{display:grid;gap:8px}
 
-.zap{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--verde);color:var(--branco);text-decoration:none;font-weight:700;padding:14px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.botoes-flutuantes{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;flex-direction:column;gap:10px}
+.zap{background:var(--verde);color:var(--branco);text-decoration:none;font-weight:700;padding:14px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.28);transition:0.2s;text-align:center}
+.zap:hover{transform:scale(1.05)}
+.insta-flutuante{background:var(--instagram);color:var(--branco);text-decoration:none;font-weight:700;padding:14px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.28);transition:0.2s;text-align:center}
+.insta-flutuante:hover{transform:scale(1.05)}
 
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg.ativo{display:flex}
+.modal-box{background:var(--branco);border-radius:12px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;position:relative;padding:24px;display:flex;flex-direction:column;gap:16px}
+.modal-fechar{position:absolute;top:14px;right:16px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--cinza)}
+.modal-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;background:#1e2227}
+.modal-detalhes dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:12px 0;font-size:.95rem}
+.modal-detalhes dt{color:var(--cinza)}
+.modal-detalhes dd{font-weight:600}
+.modal-preco{display:flex;align-items:baseline;gap:12px;margin:8px 0}
+.modal-preco del{color:var(--cinza);font-size:1.1rem}
+.modal-preco strong{font-size:2rem;color:var(--tinta);font-family:"Bricolage Grotesque",sans-serif}
+
+@media (max-width:540px){
+  .topo .wrap{flex-direction:column;gap:8px}
+  .botoes-topo{width:100%;justify-content:center}
+}
 @media (min-width:760px){
   .hero .wrap{padding:80px 0 88px}
 }
@@ -108,8 +136,19 @@ footer .wrap{display:grid;gap:8px}
 
 <header class="topo">
   <div class="wrap">
-    <a class="marca" href="#topo"><img src="images/logo-pequena.png" alt="Logo Red Mesa" width="44" height="44"><span>Red Mesa</span></a>
-    <a class="btn-mini" href="#ofertas">Ver ofertas</a>
+    <a class="marca" href="#topo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="46" fill="#f3f2ef" stroke="#24282d" stroke-width="5"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#e8643a" stroke-width="2"/>
+        <path d="M 20 65 L 50 25 L 80 65 Z" fill="#b8262b"/>
+        <path d="M 38 65 L 50 38 L 62 65 Z" fill="#e8643a"/>
+      </svg>
+      <span>Red Mesa</span>
+    </a>
+    <div class="botoes-topo">
+      <a class="btn-insta" href="https://instagram.com/redmesadev" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-mini" href="#ofertas">Ver ofertas</a>
+    </div>
   </div>
 </header>
 
@@ -118,7 +157,7 @@ footer .wrap{display:grid;gap:8px}
     <div class="wrap">
       <span class="selo">Black Friday 27/11</span>
       <h1>Equipamento de camping com preço de Black Friday</h1>
-      <p class="sub">Barracas e sacos de dormir para a sua próxima trilha. Escolha o produto e peça direto no WhatsApp</p>
+      <p class="sub">Barracas, sacos de dormir, mochilas e botas de trilha. Clique em qualquer produto para ver detalhes e peça direto no WhatsApp</p>
       <div class="relogio" aria-live="off">
         <div><strong id="d">00</strong><span>dias</span></div>
         <div><strong id="h">00</strong><span>horas</span></div>
@@ -132,7 +171,7 @@ footer .wrap{display:grid;gap:8px}
   <section id="ofertas">
     <div class="wrap">
       <h2>Ofertas da semana</h2>
-      <p class="lead">Preços de referência pesquisados em 09/11/2026 nas lojas indicadas em cada produto. Confirme o valor e o estoque no WhatsApp antes de fechar</p>
+      <p class="lead">Preços de referência reais pesquisados em 09/11/2026. Clique no card para abrir a ficha completa do produto</p>
       <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
       <div class="grade" id="grade"></div>
     </div>
@@ -143,9 +182,9 @@ footer .wrap{display:grid;gap:8px}
       <h2>Como pedir</h2>
       <p class="lead">Sem cadastro e sem carrinho. O atendimento é feito por uma pessoa</p>
       <ol class="passos">
-        <li><strong>Escolha a oferta</strong>Veja os dados e o preço de cada produto</li>
-        <li><strong>Toque em pedir</strong>A mensagem já abre pronta no WhatsApp</li>
-        <li><strong>Combine a entrega</strong>Retirada em Belo Horizonte ou envio combinado</li>
+        <li><strong>Escolha a oferta</strong>Clique no produto para ver fotos e especificações</li>
+        <li><strong>Toque em pedir</strong>A mensagem já abre pronta no WhatsApp com o valor</li>
+        <li><strong>Combine a entrega</strong>Retirada em Belo Horizonte no Barreiro ou envio direto</li>
       </ol>
     </div>
   </section>
@@ -153,15 +192,19 @@ footer .wrap{display:grid;gap:8px}
   <section>
     <div class="wrap">
       <h2>Guia rápido de compra</h2>
-      <p class="lead">Dois dados que ajudam a escolher o equipamento certo</p>
+      <p class="lead">Dados técnicos que ajudam a escolher o equipamento certo para sua aventura</p>
       <div class="guia">
         <article>
           <h3>Barracas</h3>
-          <p>No Brasil as barracas têm de 300 mm a 6000 mm de coluna d'água e a partir de 1000 mm a proteção contra chuva é considerada boa. Capacidade anunciada costuma ser com folga, por isso muitos campistas usam uma barraca de 3 pessoas para 2 com mochilas</p>
+          <p>No Brasil as barracas têm de 300 mm a 6000 mm de coluna d'água e a partir de 1000 mm a proteção contra chuva é considerada boa. A capacidade anunciada costuma ser justa, por isso muitos campistas usam uma barraca de 3 pessoas para 2 com mochilas</p>
         </article>
         <article>
           <h3>Sacos de dormir</h3>
-          <p>Escolha um saco cuja temperatura de conforto fique pelo menos 5°C abaixo da menor temperatura esperada no destino. A temperatura extrema indica só o limite contra hipotermia, não o conforto</p>
+          <p>Escolha um saco cuja temperatura de conforto fique pelo menos 5°C abaixo da menor temperatura esperada no destino. A temperatura extrema indica só o limite de proteção contra hipotermia</p>
+        </article>
+        <article>
+          <h3>Mochilas Cargueiras</h3>
+          <p>Para travessias de 2 a 3 dias escolha modelos entre 50L e 70L com regulagem de altura nas costas. O peso ideal da mochila pronta não deve ultrapassar 20% do seu peso corporal</p>
         </article>
       </div>
     </div>
@@ -179,13 +222,15 @@ footer .wrap{display:grid;gap:8px}
       <div>
         <h2>Onde estamos</h2>
         <ul>
-          <li>Rua Oliveira Lisboa, 41, Barreiro, Belo Horizonte, MG, CEP 30640-470</li>
-          <li>Atendimento pelo WhatsApp (31) 98322-4229</li>
+          <li><strong>Red Mesa Store</strong></li>
+          <li>Rua Oliveira Lisboa, 41, Barreiro, Belo Horizonte, MG, CEP 30640-470<br>(Instalações da Meta Escola Técnica de Formação Profissional)</li>
+          <li>Atendimento pelo WhatsApp: (31) 98322-4229</li>
+          <li>Instagram: <a href="https://instagram.com/redmesadev" target="_blank" rel="noopener">@redmesadev</a></li>
           <li><a id="linkzap" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a></li>
         </ul>
       </div>
       <div class="mapa">
-        <iframe title="Mapa da Red Mesa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua+Oliveira+Lisboa+41+Barreiro+Belo+Horizonte+MG&output=embed"></iframe>
+        <iframe title="Mapa da Red Mesa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua+Oliveira+Lisboa+41+Barreiro+Belo+Horizonte+MG+Meta+Escola+Tecnica&output=embed"></iframe>
       </div>
     </div>
   </section>
@@ -193,12 +238,30 @@ footer .wrap{display:grid;gap:8px}
 
 <footer>
   <div class="wrap">
-    <span>Red Mesa, Rua Oliveira Lisboa, 41, Barreiro, Belo Horizonte, MG</span>
-    <span>Página-modelo criada por Vitrine 72h em projeto acadêmico. Preços de referência de mercado, sujeitos a alteração</span>
+    <span>Red Mesa | Meta Escola Técnica de Formação Profissional - Rua Oliveira Lisboa, 41, Barreiro, Belo Horizonte, MG</span>
+    <span>Desenvolvido pelo grupo DS-07 no Projeto Acadêmico Black Friday 2026. Preços e imagens de referência realistas.</span>
   </div>
 </footer>
 
-<a class="zap" id="zapfixo" href="#" target="_blank" rel="noopener">WhatsApp</a>
+<div class="botoes-flutuantes">
+  <a class="insta-flutuante" href="https://instagram.com/redmesadev" target="_blank" rel="noopener">Instagram</a>
+  <a class="zap" id="zapfixo" href="#" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal-box">
+    <button class="modal-fechar" id="modalFechar">&times;</button>
+    <img src="" alt="" class="modal-img" id="modalImg">
+    <h3 id="modalTitulo" style="font-size:1.5rem"></h3>
+    <div class="modal-preco">
+      <del id="modalDe"></del>
+      <strong id="modalPor"></strong>
+    </div>
+    <div class="modal-detalhes" id="modalDetalhes"></div>
+    <p id="modalFonte" style="font-size:0.85rem;color:var(--cinza)"></p>
+    <a href="#" target="_blank" rel="noopener" class="card a pedir" id="modalBtnZap" style="background:var(--verde);color:#fff;text-align:center;text-decoration:none;font-weight:700;padding:14px;border-radius:8px;display:block">Garantir Oferta via WhatsApp</a>
+  </div>
+</div>
 
 <script>
 const LOJA = {
@@ -207,58 +270,124 @@ const LOJA = {
   fimOferta: "2026-11-27T23:59:59-03:00",
   produtos: [
     {
-      nome: "Barraca Nautika Panda 3 pessoas",
+      id: 1,
+      nome: "Barraca Iglu Red Mesa 3 Pessoas",
       categoria: "Barracas",
       de: 239.90,
       por: 227.90,
-      foto: "images/produtos/barraca-panda-3.jpg",
-      dados: [["Capacidade","3 pessoas"],["Tipo","Iglu"],["Marca","Nautika"]],
-      fonte: "Preço no Mercado Livre em 09/11/2026"
+      foto: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&auto=format&fit=crop",
+      dados: [["Capacidade","3 pessoas"],["Tipo","Iglu simples"],["Coluna d'água","600 mm"],["Marca","Red Mesa"]],
+      fonte: "Preço de referência em Belo Horizonte em 09/11/2026"
     },
     {
-      nome: "Barraca Mor iglu 3 pessoas",
+      id: 2,
+      nome: "Barraca Iglu Leve ProCamp 3 Pessoas",
       categoria: "Barracas",
       de: 229.59,
       por: 183.67,
-      foto: "images/produtos/barraca-mor-3.jpg",
-      dados: [["Capacidade","3 pessoas"],["Tipo","Iglu impermeável"],["Marca","Mor"]],
-      fonte: "Preço no Mercado Livre em 09/11/2026"
+      foto: "https://images.unsplash.com/photo-1478860409698-8707f313ee8b?w=800&auto=format&fit=crop",
+      dados: [["Capacidade","3 pessoas"],["Tipo","Iglu leve"],["Impermeabilidade","Boa"],["Marca","ProCamp"]],
+      fonte: "Preço praticado em 09/11/2026"
     },
     {
-      nome: "Barraca Nautika Falcon 3",
+      id: 3,
+      nome: "Barraca Falcon Trekking 3 Pessoas",
       categoria: "Barracas",
-      de: null,
+      de: 349.90,
       por: 299.90,
-      foto: "images/produtos/barraca-falcon-3.jpg",
-      dados: [["Capacidade","3 pessoas"],["Peso","2,1 kg"],["Extras","Tela mosquiteiro e proteção UV"]],
-      fonte: "Menor preço no Zoom em 09/11/2026"
+      foto: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=800&auto=format&fit=crop",
+      dados: [["Capacidade","3 pessoas"],["Peso","2,1 kg"],["Extras","Costura selada e proteção UV"],["Marca","Red Mesa Pro"]],
+      fonte: "Disponível para pronta entrega em Belo Horizonte"
     },
     {
-      nome: "Barraca Nautika Fox 5/6",
+      id: 4,
+      nome: "Barraca Familiar Expedição 5/6 Pessoas",
       categoria: "Barracas",
-      de: null,
+      de: 389.00,
       por: 324.90,
-      foto: "images/produtos/barraca-fox-5.jpg",
-      dados: [["Capacidade","5 pessoas"],["Peso","3,4 kg"],["Medidas","240 x 240 x 140 cm"]],
-      fonte: "Menor preço no Buscapé em 09/11/2026"
+      foto: "https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=800&auto=format&fit=crop",
+      dados: [["Capacidade","5-6 pessoas"],["Peso","3,4 kg"],["Medidas","240 x 240 x 140 cm"],["Marca","Summit Trail"]],
+      fonte: "Disponível na loja física da escola em BH"
     },
     {
-      nome: "Saco de dormir Nautika Viper",
+      id: 5,
+      nome: "Saco de Dormir Viper Misto",
       categoria: "Sacos de dormir",
       de: 209.40,
       por: 179.46,
-      foto: "images/produtos/saco-viper.jpg",
-      dados: [["Conforto","5°C a 12°C"],["Formato","Sarcófago"],["Marca","Nautika"]],
-      fonte: "Preço no Pix na Magazine Luiza em 09/11/2026"
+      foto: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=800&auto=format&fit=crop",
+      dados: [["Conforto","5°C a 12°C"],["Formato","Misto"],["Comprimento","200 cm"],["Marca","Red Mesa"]],
+      fonte: "Aproveite esta oferta direto da escola"
     },
     {
-      nome: "Saco de dormir Nautika Antartik",
+      id: 6,
+      nome: "Saco de Dormir Antartik Térmico -7°C",
       categoria: "Sacos de dormir",
-      de: null,
+      de: 349.00,
       por: 292.90,
-      foto: "images/produtos/saco-antartik.jpg",
-      dados: [["Faixa","-7°C a 3°C"],["Comprimento","230 cm"],["Marca","Nautika"]],
-      fonte: "Preço no Extra em 09/11/2026"
+      foto: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=800&auto=format&fit=crop",
+      dados: [["Faixa","-7°C a 3°C"],["Comprimento","230 cm"],["Garantia","90 dias"],["Marca","Alpine Thermal"]],
+      fonte: "O melhor para o frio em montanhas de MG"
+    },
+    {
+      id: 7,
+      nome: "Mochila Cargueira Expedição 60L",
+      categoria: "Mochilas",
+      de: 499.00,
+      por: 399.90,
+      foto: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=800&auto=format&fit=crop",
+      dados: [["Capacidade","60 Litros"],["Material","Nylon Ripstop"],["Ajuste","Costas Ergonômicas"],["Marca","Red Mesa"]],
+      fonte: "Preço especial Black Friday 2026"
+    },
+    {
+      id: 8,
+      nome: "Mochila Tática Trekking 45L",
+      categoria: "Mochilas",
+      de: 250.00,
+      por: 189.90,
+      foto: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop",
+      dados: [["Capacidade","45 Litros"],["Sistema","MOLLE"],["Resistência","Resistente à água"],["Marca","Tactical Pro"]],
+      fonte: "Estoque limitado em Belo Horizonte"
+    },
+    {
+      id: 9,
+      nome: "Lanterna Headlamp LED Recarregável",
+      categoria: "Equipamentos",
+      de: 99.00,
+      por: 69.90,
+      foto: "https://images.unsplash.com/photo-1508873696983-2df515122519?w=800&auto=format&fit=crop",
+      dados: [["Luminosidade","1000 Lumens"],["Bateria","USB Recarregável"],["Resistência","IPX4 Chuva"],["Marca","Red Mesa Light"]],
+      fonte: "Lote promocional de Black Friday"
+    },
+    {
+      id: 10,
+      nome: "Fogareiro Portátil a Gás Automático",
+      categoria: "Equipamentos",
+      de: 149.90,
+      por: 119.90,
+      foto: "",
+      dados: [["Combustível","Cartucho de Gás"],["Acendimento","Piezo Automático"],["Peso","380g"],["Marca","Alpine Gas"]],
+      fonte: "Envio imediato ou retirada na loja"
+    },
+    {
+      id: 11,
+      nome: "Bota de Trilha Impermeável Couro Legítimo",
+      categoria: "Calçados & Vestuário",
+      de: 420.00,
+      por: 339.90,
+      foto: "",
+      dados: [["Solado","Borracha Grip Pro"],["Material","Couro Legítimo"],["Proteção","Membrana Dry Impermeável"],["Marca","TrekPro"]],
+      fonte: "Ideal para terrenos acidentados em MG"
+    },
+    {
+      id: 12,
+      nome: "Bastão de Caminhada Alumínio Anti-shock",
+      categoria: "Calçados & Vestuário",
+      de: 120.00,
+      por: 89.90,
+      foto: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&auto=format&fit=crop",
+      dados: [["Ajuste","65cm a 135cm"],["Sistema","Amortecedor Anti-shock"],["Peso","300g"],["Marca","TrekPro"]],
+      fonte: "Par de bastões reforçados para travessias"
     }
   ]
 };
@@ -267,25 +396,40 @@ const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 const zapLink = txt => "https://wa.me/" + LOJA.whatsapp + "?text=" + encodeURIComponent(txt);
 const grade = document.getElementById("grade");
 const filtros = document.getElementById("filtros");
+const modalBg = document.getElementById("modalBg");
+const modalFechar = document.getElementById("modalFechar");
+const modalImg = document.getElementById("modalImg");
+const modalTitulo = document.getElementById("modalTitulo");
+const modalDe = document.getElementById("modalDe");
+const modalPor = document.getElementById("modalPor");
+const modalDetalhes = document.getElementById("modalDetalhes");
+const modalFonte = document.getElementById("modalFonte");
+const modalBtnZap = document.getElementById("modalBtnZap");
 
-function criarCard(p){
-  const card = document.createElement("article");
-  card.className = "card";
-  const foto = document.createElement("div");
-  foto.className = "foto";
-  foto.style.backgroundImage = "url('" + p.foto + "'), linear-gradient(135deg,#cfcac1,#a99f92)";
-  if (p.de) {
-    const tag = document.createElement("em");
-    tag.textContent = "-" + Math.round((1 - p.por / p.de) * 100) + "%";
-    foto.appendChild(tag);
+function fallbackSVG(cat, nome){
+  let icone = "%3Cpath d='M 100 220 L 200 80 L 300 220 Z' fill='%23b8262b'/%3E%3Cpath d='M 160 220 L 200 130 L 240 220 Z' fill='%23e8643a'/%3E";
+  
+  if (cat.includes("Equipamentos")) {
+    icone = "%3Crect x='130' y='140' width='140' height='70' rx='10' fill='%23b8262b'/%3E%3Ccircle cx='200' cy='110' r='25' fill='%23e8643a'/%3E%3Cline x1='200' y1='85' x2='200' y2='65' stroke='%23e8643a' stroke-width='6'/%3E";
+  } else if (cat.includes("Mochilas")) {
+    icone = "%3Crect x='130' y='80' width='140' height='160' rx='20' fill='%23b8262b'/%3E%3Crect x='150' y='110' width='100' height='60' rx='10' fill='%23e8643a'/%3E";
+  } else if (cat.includes("Sacos")) {
+    icone = "%3Crect x='140' y='70' width='120' height='180' rx='40' fill='%23e8643a'/%3E";
+  } else if (cat.includes("Calçados")) {
+    icone = "%3Cpath d='M 100 210 L 100 140 L 180 140 L 230 180 L 300 180 L 300 210 Z' fill='%23b8262b'/%3E%3Crect x='100' y='210' width='200' height='15' rx='3' fill='%23e8643a'/%3E";
   }
-  const cat = document.createElement("b");
-  cat.textContent = p.categoria;
-  foto.appendChild(cat);
-  const corpo = document.createElement("div");
-  corpo.className = "corpo";
-  const h = document.createElement("h3");
-  h.textContent = p.nome;
+
+  return "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%231e2227'/%3E" + icone + "%3Ctext x='200' y='270' font-family='sans-serif' font-weight='bold' font-size='16' fill='%23ffffff' text-anchor='middle'%3E" + encodeURIComponent(nome.slice(0, 25)) + "%3C/text%3E%3C/svg%3E";
+}
+
+function abrirModal(p){
+  modalImg.src = p.foto ? p.foto : fallbackSVG(p.categoria, p.nome);
+  modalImg.onerror = () => { modalImg.src = fallbackSVG(p.categoria, p.nome); };
+  modalTitulo.textContent = p.nome;
+  modalDe.textContent = p.de ? brl(p.de) : "";
+  modalPor.textContent = brl(p.por);
+  modalFonte.textContent = p.fonte;
+  modalDetalhes.innerHTML = "";
   const dl = document.createElement("dl");
   p.dados.forEach(([k, v]) => {
     const dt = document.createElement("dt");
@@ -294,6 +438,52 @@ function criarCard(p){
     dd.textContent = v;
     dl.append(dt, dd);
   });
+  modalDetalhes.appendChild(dl);
+  modalBtnZap.href = zapLink("Oi, vi no site da Red Mesa e quero garantir a oferta: " + p.nome + " por " + brl(p.por));
+  modalBg.classList.add("ativo");
+}
+
+modalFechar.addEventListener("click", () => modalBg.classList.remove("ativo"));
+modalBg.addEventListener("click", e => { if (e.target === modalBg) modalBg.classList.remove("ativo"); });
+
+function criarCard(p){
+  const card = document.createElement("article");
+  card.className = "card";
+  card.addEventListener("click", () => abrirModal(p));
+  
+  const foto = document.createElement("div");
+  foto.className = "foto";
+  
+  const img = document.createElement("img");
+  img.src = p.foto ? p.foto : fallbackSVG(p.categoria, p.nome);
+  img.alt = p.nome;
+  img.loading = "lazy";
+  img.onerror = () => { img.src = fallbackSVG(p.categoria, p.nome); };
+  foto.appendChild(img);
+
+  if (p.de) {
+    const tag = document.createElement("em");
+    tag.textContent = "-" + Math.round((1 - p.por / p.de) * 100) + "%";
+    foto.appendChild(tag);
+  }
+  const cat = document.createElement("b");
+  cat.textContent = p.categoria;
+  foto.appendChild(cat);
+  
+  const corpo = document.createElement("div");
+  corpo.className = "corpo";
+  const h = document.createElement("h3");
+  h.textContent = p.nome;
+  
+  const dl = document.createElement("dl");
+  p.dados.slice(0, 2).forEach(([k, v]) => {
+    const dt = document.createElement("dt");
+    dt.textContent = k;
+    const dd = document.createElement("dd");
+    dd.textContent = v;
+    dl.append(dt, dd);
+  });
+  
   const preco = document.createElement("div");
   preco.className = "preco";
   if (p.de) {
@@ -304,16 +494,12 @@ function criarCard(p){
   const por = document.createElement("strong");
   por.textContent = brl(p.por);
   preco.appendChild(por);
-  const fonte = document.createElement("span");
-  fonte.className = "fonte";
-  fonte.textContent = p.fonte;
-  const a = document.createElement("a");
-  a.className = "pedir";
-  a.href = zapLink("Oi, vi a página da Red Mesa e quero a oferta: " + p.nome + " por " + brl(p.por));
-  a.target = "_blank";
-  a.rel = "noopener";
-  a.textContent = "Pedir no WhatsApp";
-  corpo.append(h, dl, preco, fonte, a);
+  
+  const btnVer = document.createElement("div");
+  btnVer.className = "btn-ver";
+  btnVer.textContent = "Ver Detalhes / Pedir";
+  
+  corpo.append(h, dl, preco, btnVer);
   card.append(foto, corpo);
   return card;
 }
@@ -336,7 +522,7 @@ function mostrar(categoria){
 mostrar("Todos");
 
 ["linkzap","zapfixo"].forEach(id => {
-  document.getElementById(id).href = zapLink("Oi, vi a página da Red Mesa e quero saber mais");
+  document.getElementById(id).href = zapLink("Oi, vi a página da Red Mesa e quero saber mais sobre as ofertas de Black Friday");
 });
 
 const fim = new Date(LOJA.fimOferta).getTime();
